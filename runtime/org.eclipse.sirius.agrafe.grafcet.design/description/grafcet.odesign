@@ -1,0 +1,1470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:properties="http://www.eclipse.org/sirius/properties/1.0.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="grafcet" version="12.0.0.2017041100">
+  <ownedViewpoints name="grafcet_chart" modelFileExtension="grafcet">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Grafcet_diagram" domainClass="grafcet::Grafcet" enablePopupBars="true">
+      <metamodel href="platform:/plugin/org.eclipse.gmf.grafcet/model/grafcet.ecore#/"/>
+      <metamodel href="platform:/plugin/org.eclipse.gmf.grafcet/model/terms.ecore#/"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="StepNode" semanticCandidatesExpression="feature:steps" domainClass="grafcet::Step">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql: if self.activationLink then '* ' + self.id else self.id endif" sizeComputationExpression="5" labelPosition="node" workspacePath="/org.eclipse.sirius.agrafe.grafcet.design/icons_svg/Step.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+          <conditionnalStyles predicateExpression="aql:self.initial">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql: if self.activationLink then '* ' + self.id else self.id endif" sizeComputationExpression="5" labelPosition="node" workspacePath="/org.eclipse.sirius.agrafe.grafcet.design/icons_svg/StepInitial.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
+        </nodeMappings>
+        <nodeMappings name="TransitionNode" semanticCandidatesExpression="feature:transitions" domainClass="grafcet::Transition">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="11" showIcon="false" labelExpression="feature:id" labelAlignment="LEFT" sizeComputationExpression="5" workspacePath="/org.eclipse.sirius.agrafe.grafcet.design/icons_svg/Transition.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="SynchronizationNode" semanticCandidatesExpression="feature:synchronizations" domainClass="grafcet::Synchronization">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="" labelAlignment="LEFT" hideLabelByDefault="true" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.eclipse.sirius.agrafe.grafcet.design/icons_svg/Synchronization.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="MacroStepNode" semanticCandidatesExpression="feature:macrosteps" domainClass="grafcet::Macrostep">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:'M' + self.id" sizeComputationExpression="5" labelPosition="node" workspacePath="/org.eclipse.sirius.agrafe.grafcet.design/icons_svg/MacroStep.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="EnclosingStepNode" semanticCandidatesExpression="feature:steps" domainClass="grafcet::EnclosingStep">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:self.id" sizeComputationExpression="5" labelPosition="node" workspacePath="/org.eclipse.sirius.agrafe.grafcet.design/icons_svg/EnclosingStep.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+          <conditionnalStyles predicateExpression="aql:self.initial">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="feature:id" sizeComputationExpression="5" labelPosition="node" workspacePath="/org.eclipse.sirius.agrafe.grafcet.design/icons_svg/EnclosingStepInitial.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
+        </nodeMappings>
+        <nodeMappings name="ContinuousActionNode" semanticCandidatesExpression="feature:actionTypes" domainClass="grafcet::ContinuousAction">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:self.variable.variableDeclaration.name" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/org.eclipse.sirius.agrafe.grafcet.design/icons_svg/ContinuousAction.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+          <conditionnalStyles predicateExpression="aql: self.continuousActionType=grafcet::ContinuousActionType::continuousAction">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:self.variable.variableDeclaration.name" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/org.eclipse.sirius.agrafe.grafcet.design/icons_svg/ContinuousAction.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="aql: self.continuousActionType=grafcet::ContinuousActionType::assignationCondition">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:self.variable.variableDeclaration.name" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/org.eclipse.sirius.agrafe.grafcet.design/icons_svg/ContinuousActionConditional.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
+        </nodeMappings>
+        <nodeMappings name="ForcingOrderNode" semanticCandidatesExpression="feature:actionTypes" domainClass="grafcet::ForcingOrder">
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql: self.partialGrafcet.name + '{' + if self.forcingOrderType = grafcet::ForcingOrderType::currentSituation then '*' else if self.forcingOrderType = grafcet::ForcingOrderType::initialSituation then 'INIT' else if self.forcingOrderType = grafcet::ForcingOrderType::explicitSituation then self.forcedSteps->collect(x|x.id)->toString() else ' ' endif endif endif+'}'" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/org.eclipse.sirius.agrafe.grafcet.design/icons_svg/ForcingOrder.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="ArcElementEdge" semanticCandidatesExpression="aql:self.partialGrafcets.arcs + self.arcs" sourceMapping="//@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@nodeMappings[name='TransitionNode'] //@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@nodeMappings[name='StepNode'] //@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@nodeMappings[name='EnclosingStepNode'] //@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@nodeMappings[name='MacroStepNode'] //@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@nodeMappings[name='SynchronizationNode'] //@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@containerMappings[name='MacroStepContainer']/@subNodeMappings[name='EntryStepNode'] //@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@containerMappings[name='MacroStepContainer']/@subNodeMappings[name='ExitStepNode']" targetMapping="//@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@nodeMappings[name='TransitionNode'] //@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@nodeMappings[name='StepNode'] //@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@nodeMappings[name='EnclosingStepNode'] //@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@nodeMappings[name='MacroStepNode'] //@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@nodeMappings[name='SynchronizationNode'] //@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@containerMappings[name='MacroStepContainer']/@subNodeMappings[name='EntryStepNode'] //@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@containerMappings[name='MacroStepContainer']/@subNodeMappings[name='ExitStepNode']" targetFinderExpression="feature:target" sourceFinderExpression="feature:source" domainClass="grafcet::Arc" useDomainElement="true">
+          <style sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="ActionLinkElementEdge" semanticCandidatesExpression="aql:self.partialGrafcets.actionLinks + self.actionLinks" sourceMapping="//@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@nodeMappings[name='StepNode']" targetMapping="//@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@nodeMappings[name='ContinuousActionNode'] //@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@nodeMappings[name='ForcingOrderNode'] //@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@containerMappings[name='StoredActionContainer']" targetFinderExpression="feature:actionType" sourceFinderExpression="feature:step" domainClass="grafcet::ActionLink" useDomainElement="true">
+          <style targetArrow="NoDecoration" sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="TermEdge" sourceMapping="//@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@nodeMappings[name='TransitionNode'] //@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@containerMappings[name='StoredActionContainer'] //@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@nodeMappings[name='ContinuousActionNode']" targetMapping="//@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@containerMappings[name='TermContainer']" targetFinderExpression="aql:self.term">
+          <style lineStyle="dot" targetArrow="NoDecoration" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="MacroStepContainer" semanticCandidatesExpression="feature:partialGrafcets" domainClass="grafcet::MacrostepExpansion" reusedNodeMappings="//@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@nodeMappings[name='StepNode'] //@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@nodeMappings[name='TransitionNode'] //@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@nodeMappings[name='EnclosingStepNode'] //@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@nodeMappings[name='MacroStepNode'] //@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@nodeMappings[name='SynchronizationNode'] //@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@nodeMappings[name='ContinuousActionNode'] //@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@nodeMappings[name='ForcingOrderNode']" reusedContainerMappings="//@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@containerMappings[name='StoredActionContainer'] //@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@containerMappings[name='StoredActionContainer']/@subContainerMappings[name='ValueContainer'] //@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@containerMappings[name='StoredActionContainer']/@subContainerMappings[name='ValueContainer']/@subContainerMappings[name='SubTermContainer'] //@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@containerMappings[name='TermContainer'] //@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@containerMappings[name='TermContainer']/@subContainerMappings[name='SubTermContainer']">
+          <subNodeMappings name="EntryStepNode" semanticCandidatesExpression="feature:entryStep" domainClass="grafcet::EntryStep">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:'E' + self.id" sizeComputationExpression="5" labelPosition="node" workspacePath="/org.eclipse.sirius.agrafe.grafcet.design/icons_svg/Step.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="ExitStepNode" semanticCandidatesExpression="feature:exitStep" domainClass="grafcet::ExitStep">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql:'S' + self.id" sizeComputationExpression="5" labelPosition="node" workspacePath="/org.eclipse.sirius.agrafe.grafcet.design/icons_svg/Step.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelExpression="aql: self.name" labelAlignment="LEFT">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.1"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="EnclosingStepContainer" semanticCandidatesExpression="feature:partialGrafcets" domainClass="grafcet::PartialGrafcet" reusedNodeMappings="//@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@nodeMappings[name='StepNode'] //@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@nodeMappings[name='TransitionNode'] //@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@nodeMappings[name='EnclosingStepNode'] //@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@nodeMappings[name='MacroStepNode'] //@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@nodeMappings[name='SynchronizationNode'] //@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@nodeMappings[name='ContinuousActionNode'] //@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@nodeMappings[name='ForcingOrderNode']" reusedContainerMappings="//@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@containerMappings[name='StoredActionContainer'] //@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@containerMappings[name='StoredActionContainer']/@subContainerMappings[name='ValueContainer'] //@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@containerMappings[name='StoredActionContainer']/@subContainerMappings[name='ValueContainer']/@subContainerMappings[name='SubTermContainer'] //@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@containerMappings[name='TermContainer'] //@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@containerMappings[name='TermContainer']/@subContainerMappings[name='SubTermContainer']">
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelExpression="aql: if self.enclosingStep.id &lt;> null then self.name +  '/' + 'X' + self.enclosingStep.id else self.name endif" labelAlignment="LEFT">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <labelBorderStyle href="environment:/viewpoint#//@labelBorderStyles/@labelBorderStyleDescriptions.1"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="DeclarationsContainer" semanticCandidatesExpression="feature:variableDeclarationContainer" domainClass="grafcet::VariableDeclarationContainer" childrenPresentation="List">
+          <subNodeMappings name="VariableDeclarationNode" semanticCandidatesExpression="feature:variableDeclarations" domainClass="terms::VariableDeclaration">
+            <style xsi:type="style:BundledImageDescription" labelSize="12" showIcon="false" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelExpression="Declarations">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="TermContainer" semanticCandidatesExpression="aql:self.transitions->collect(x|x.term) + self.actionTypes->select(x|x.oclIsKindOf(grafcet::StoredAction))->collect(x|x.term) + self.actionTypes->select(x|x.oclIsKindOf(grafcet::ContinuousAction))->collect(x|x.term)" domainClass="terms::Term">
+          <subContainerMappings name="SubTermContainer" semanticCandidatesExpression="aql:self.eContents()" domainClass="terms::Term" reusedContainerMappings="//@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@containerMappings[name='TermContainer']/@subContainerMappings[name='SubTermContainer']">
+            <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelExpression="aql: if self.oclIsKindOf(terms::Variable) then if self.oclAsType(terms::Variable).variableDeclaration = null then 'Select Variable Declaration' else self.oclAsType(terms::Variable).variableDeclaration.name endif else if self.oclIsTypeOf(terms::IntegerConstant) then self.oclAsType(terms::IntegerConstant).value else if self.oclIsTypeOf(terms::BooleanConstant) then self.oclAsType(terms::BooleanConstant).value else self.eClass().name endif endif endif" heightComputationExpression="1">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelExpression="aql: if self.oclIsKindOf(terms::Variable) then if self.oclAsType(terms::Variable).variableDeclaration = null then 'Please select Variable Declaration' else self.oclAsType(terms::Variable).variableDeclaration.name endif else if self.oclIsTypeOf(terms::IntegerConstant) then self.oclAsType(terms::IntegerConstant).value else if self.oclIsTypeOf(terms::BooleanConstant) then self.oclAsType(terms::BooleanConstant).value else self.eClass().name endif endif endif" heightComputationExpression="1">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="StoredActionContainer" semanticCandidatesExpression="aql:self.actionTypes" domainClass="grafcet::StoredAction">
+          <subNodeMappings name="OutputVariableNode" semanticCandidatesExpression="aql:self.variable" domainClass="terms::Variable">
+            <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="aql: if self.variableDeclaration = null then 'Select Variable Declaration' else self.variableDeclaration.name endif + ' :='" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+            <conditionnalStyles>
+              <style xsi:type="style:WorkspaceImageDescription" labelSize="12" labelExpression="aql: if self.variableDeclaration = null then 'Select Variable Declaration' else self.variableDeclaration.name endif + ' :='" labelAlignment="LEFT" sizeComputationExpression="-1" labelPosition="node" resizeKind="NSEW" workspacePath="/org.eclipse.sirius.agrafe.grafcet.design/icons_svg/variableNode.svg">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </conditionnalStyles>
+          </subNodeMappings>
+          <subContainerMappings name="ValueContainer" semanticCandidatesExpression="aql:self.value" domainClass="terms::Term">
+            <subContainerMappings name="SubTermContainer" semanticCandidatesExpression="aql:self.eContents()" domainClass="terms::Term" reusedContainerMappings="//@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@containerMappings[name='StoredActionContainer']/@subContainerMappings[name='ValueContainer']/@subContainerMappings[name='SubTermContainer']">
+              <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelExpression="aql: if self.oclIsKindOf(terms::Variable) then if self.oclAsType(terms::Variable).variableDeclaration = null then 'Please select Variable Declaration' else self.oclAsType(terms::Variable).variableDeclaration.name endif else if self.oclIsTypeOf(terms::IntegerConstant) then self.oclAsType(terms::IntegerConstant).value else if self.oclIsTypeOf(terms::BooleanConstant) then self.oclAsType(terms::BooleanConstant).value else self.eClass().name endif endif endif" widthComputationExpression="3" heightComputationExpression="1">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </subContainerMappings>
+            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="1" arcHeight="1" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelExpression="aql: if self.oclIsKindOf(terms::Variable) then if self.oclAsType(terms::Variable).variableDeclaration = null then 'Please select Variable Declaration' else self.oclAsType(terms::Variable).variableDeclaration.name endif else if self.oclIsTypeOf(terms::IntegerConstant) then self.oclAsType(terms::IntegerConstant).value else if self.oclIsTypeOf(terms::BooleanConstant) then self.oclAsType(terms::BooleanConstant).value else self.eClass().name endif endif endif">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="" workspacePath="/org.eclipse.sirius.agrafe.grafcet.design/icons_svg/StoredActionActivation.svg">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+          <conditionnalStyles predicateExpression="aql: self.storedActionType=grafcet::StoredActionType::activation">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="" workspacePath="/org.eclipse.sirius.agrafe.grafcet.design/icons_svg/StoredActionActivation.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="aql: self.storedActionType=grafcet::StoredActionType::deactivation">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="" workspacePath="/org.eclipse.sirius.agrafe.grafcet.design/icons_svg/StoredActionDeactivation.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="aql: self.storedActionType=grafcet::StoredActionType::event">
+            <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="" workspacePath="/org.eclipse.sirius.agrafe.grafcet.design/icons_svg/StoredActionEvent.svg">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
+        </containerMappings>
+        <toolSections name="GRAFCET">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="createStep" label="Step" nodeMappings="//@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@nodeMappings[name='StepNode']" iconPath="/org.eclipse.sirius.agrafe.grafcet.design/icons_png/Step.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="grafcet::Step" referenceName="steps">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: container.steps->size()"/>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:if container.variableDeclarationContainer = null then container.eContainer().variableDeclarationContainer else container.variableDeclarationContainer endif">
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::VariableDeclaration" referenceName="variableDeclarations" variableName="instanceVar">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceVar">
+                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Bool" referenceName="sort" variableName="instanceSort">
+                          <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:'900' + if self.eContainer(grafcet::Grafcet).variableDeclarationContainer = null then '0' self.eContainer(grafcet::Grafcet).variableDeclarationContainer.eContents()->size() endif"/>
+                          <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceVar">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="sort" valueExpression="var:instanceSort"/>
+                          </subModelOperations>
+                        </subModelOperations>
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql: 'X' + instance.id"/>
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="variableDeclarationType" valueExpression="aql:terms::VariableDeclarationType::step"/>
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="step" valueExpression="var:instance"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="createTransition" label="Transition" nodeMappings="//@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@nodeMappings[name='TransitionNode']" iconPath="/org.eclipse.sirius.agrafe.grafcet.design/icons_png/Transition.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="grafcet::Transition" referenceName="transitions">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:container.transitions->size()"/>
+                  <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Transition">
+                    <buttons labelExpression="AND" default="true" closeDialogOnClick="true">
+                      <initialOperation>
+                        <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                          <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::And" referenceName="term" variableName="instanceOp">
+                            <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                              <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: instance.id.toString() + (instance.eContents()->size()).toString()"/>
+                              <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Bool" referenceName="output" variableName="instanceOut">
+                                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                  <subModelOperations xsi:type="tool_1:SetValue" featureName="sort" valueExpression="aql:instanceOp.output"/>
+                                </subModelOperations>
+                                <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().id.toString() + self.eContainer().eContents()->size()"/>
+                              </subModelOperations>
+                            </subModelOperations>
+                          </subModelOperations>
+                        </firstModelOperations>
+                      </initialOperation>
+                    </buttons>
+                    <buttons labelExpression="OR" default="true" closeDialogOnClick="true">
+                      <initialOperation>
+                        <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                          <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Or" referenceName="term" variableName="instanceOp">
+                            <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                              <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: instance.id.toString() + (instance.eContents()->size()).toString()"/>
+                              <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Bool" referenceName="output" variableName="instanceOut">
+                                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                  <subModelOperations xsi:type="tool_1:SetValue" featureName="sort" valueExpression="aql:instanceOp.output"/>
+                                </subModelOperations>
+                                <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().id.toString() + self.eContainer().eContents()->size()"/>
+                              </subModelOperations>
+                            </subModelOperations>
+                          </subModelOperations>
+                        </firstModelOperations>
+                      </initialOperation>
+                    </buttons>
+                    <buttons labelExpression="NOT" default="true" closeDialogOnClick="true">
+                      <initialOperation>
+                        <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                          <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Not" referenceName="term" variableName="instanceOp">
+                            <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                              <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: instance.id.toString() + (instance.eContents()->size()).toString()"/>
+                              <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Bool" referenceName="output" variableName="instanceOut">
+                                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                  <subModelOperations xsi:type="tool_1:SetValue" featureName="sort" valueExpression="aql:instanceOp.output"/>
+                                </subModelOperations>
+                                <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().id.toString() + self.eContainer().eContents()->size()"/>
+                              </subModelOperations>
+                            </subModelOperations>
+                          </subModelOperations>
+                        </firstModelOperations>
+                      </initialOperation>
+                    </buttons>
+                    <buttons labelExpression="RisingEdge" default="true" closeDialogOnClick="true">
+                      <initialOperation>
+                        <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                          <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::RisingEdge" referenceName="term" variableName="instanceOp">
+                            <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                              <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: instance.id.toString() + (instance.eContents()->size()).toString()"/>
+                              <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Bool" referenceName="output" variableName="instanceOut">
+                                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                  <subModelOperations xsi:type="tool_1:SetValue" featureName="sort" valueExpression="aql:instanceOp.output"/>
+                                </subModelOperations>
+                                <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().id.toString() + self.eContainer().eContents()->size()"/>
+                              </subModelOperations>
+                            </subModelOperations>
+                          </subModelOperations>
+                        </firstModelOperations>
+                      </initialOperation>
+                    </buttons>
+                    <buttons labelExpression="FallingEdge" default="true" closeDialogOnClick="true">
+                      <initialOperation>
+                        <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                          <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::FallingEdge" referenceName="term" variableName="instanceOp">
+                            <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                              <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: instance.id.toString() + (instance.eContents()->size()).toString()"/>
+                              <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Bool" referenceName="output" variableName="instanceOut">
+                                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                  <subModelOperations xsi:type="tool_1:SetValue" featureName="sort" valueExpression="aql:instanceOp.output"/>
+                                </subModelOperations>
+                                <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().id.toString() + self.eContainer().eContents()->size()"/>
+                              </subModelOperations>
+                            </subModelOperations>
+                          </subModelOperations>
+                        </firstModelOperations>
+                      </initialOperation>
+                    </buttons>
+                    <buttons labelExpression="=" default="true" closeDialogOnClick="true">
+                      <initialOperation>
+                        <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                          <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Equality" referenceName="term" variableName="instanceOp">
+                            <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                              <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: instance.id.toString() + (instance.eContents()->size()).toString()"/>
+                              <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Bool" referenceName="output" variableName="instanceOut">
+                                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                  <subModelOperations xsi:type="tool_1:SetValue" featureName="sort" valueExpression="aql:instanceOp.output"/>
+                                </subModelOperations>
+                                <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().id.toString() + self.eContainer().eContents()->size()"/>
+                              </subModelOperations>
+                            </subModelOperations>
+                          </subModelOperations>
+                        </firstModelOperations>
+                      </initialOperation>
+                    </buttons>
+                    <buttons labelExpression="&lt;" default="true" closeDialogOnClick="true">
+                      <initialOperation>
+                        <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                          <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::LessThan" referenceName="term" variableName="instanceOp">
+                            <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                              <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: instance.id.toString() + (instance.eContents()->size()).toString()"/>
+                              <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Bool" referenceName="output" variableName="instanceOut">
+                                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                  <subModelOperations xsi:type="tool_1:SetValue" featureName="sort" valueExpression="aql:instanceOp.output"/>
+                                </subModelOperations>
+                                <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().id.toString() + self.eContainer().eContents()->size()"/>
+                              </subModelOperations>
+                            </subModelOperations>
+                          </subModelOperations>
+                        </firstModelOperations>
+                      </initialOperation>
+                    </buttons>
+                    <buttons labelExpression=">" default="true" closeDialogOnClick="true">
+                      <initialOperation>
+                        <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                          <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::GreaterThan" referenceName="term" variableName="instanceOp">
+                            <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                              <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: instance.id.toString() + (instance.eContents()->size()).toString()"/>
+                              <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Bool" referenceName="output" variableName="instanceOut">
+                                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                  <subModelOperations xsi:type="tool_1:SetValue" featureName="sort" valueExpression="aql:instanceOp.output"/>
+                                </subModelOperations>
+                                <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().id.toString() + self.eContainer().eContents()->size()"/>
+                              </subModelOperations>
+                            </subModelOperations>
+                          </subModelOperations>
+                        </firstModelOperations>
+                      </initialOperation>
+                    </buttons>
+                    <buttons labelExpression="Boolean Constant" default="true" closeDialogOnClick="true">
+                      <initialOperation>
+                        <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                          <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::BooleanConstant" referenceName="term" variableName="instanceOp">
+                            <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                              <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: instance.id.toString() + (instance.eContents()->size()).toString()"/>
+                              <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Bool" referenceName="output" variableName="instanceOut">
+                                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                  <subModelOperations xsi:type="tool_1:SetValue" featureName="sort" valueExpression="aql:instanceOp.output"/>
+                                </subModelOperations>
+                                <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().id.toString() + self.eContainer().eContents()->size()"/>
+                              </subModelOperations>
+                            </subModelOperations>
+                          </subModelOperations>
+                        </firstModelOperations>
+                      </initialOperation>
+                    </buttons>
+                    <buttons labelExpression="Integer Constant" default="true" closeDialogOnClick="true">
+                      <initialOperation>
+                        <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                          <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::IntegerConstant" referenceName="term" variableName="instanceOp">
+                            <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                              <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: instance.id.toString() + (instance.eContents()->size()).toString()"/>
+                              <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Integer" referenceName="output" variableName="instanceOut">
+                                <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                  <subModelOperations xsi:type="tool_1:SetValue" featureName="sort" valueExpression="aql:instanceOp.output"/>
+                                </subModelOperations>
+                                <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().id.toString() + self.eContainer().eContents()->size()"/>
+                              </subModelOperations>
+                            </subModelOperations>
+                          </subModelOperations>
+                        </firstModelOperations>
+                      </initialOperation>
+                    </buttons>
+                    <buttons labelExpression="Variable DEV" default="true" closeDialogOnClick="true">
+                      <initialOperation>
+                        <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                          <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Variable" referenceName="term" variableName="instanceOp">
+                            <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                              <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: instance.id.toString() + (instance.eContents()->size()).toString()"/>
+                            </subModelOperations>
+                          </subModelOperations>
+                        </firstModelOperations>
+                      </initialOperation>
+                    </buttons>
+                    <page name="Default Page" labelExpression="Set term of transition condition" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='createTransition']/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.1/@groups.0"/>
+                    <groups name="Default Group" labelExpression="Group" domainClass="terms::VariableDeclaration" semanticCandidateExpression="var:self"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="createSynchronization" label="Synchonization" nodeMappings="//@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@nodeMappings[name='SynchronizationNode']" iconPath="/org.eclipse.sirius.agrafe.grafcet.design/icons_png/Synchronization.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="grafcet::Synchronization" referenceName="synchronizations"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="createArc" label="Arc" edgeMappings="//@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@edgeMappings[name='ArcElementEdge']" iconPath="/org.eclipse.sirius.agrafe.grafcet.design/icons_png/Arc.png">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:source.eContainer()">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="grafcet::Arc" referenceName="arcs">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="var:source"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="createContinuousAction" label="Continuous Action" nodeMappings="//@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@nodeMappings[name='ContinuousActionNode']" iconPath="/org.eclipse.sirius.agrafe.grafcet.design/icons_png/ContinuousAction.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="grafcet::ContinuousAction" referenceName="actionTypes">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().actionTypes->size()"/>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Variable" referenceName="variable" variableName="instanceVar">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceVar">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: instance.id.toString() + (instance.eContents()->size()).toString()"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Continuous Action">
+                    <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                      <initialOperation/>
+                    </buttons>
+                    <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                      <initialOperation>
+                        <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:instance">
+                          <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.continuousActionType = grafcet::ContinuousActionType::assignationCondition">
+                            <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Continuous Action">
+                              <buttons labelExpression="AND" default="true" closeDialogOnClick="true">
+                                <initialOperation>
+                                  <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::And" referenceName="term" variableName="instanceOp">
+                                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                        <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: instance.id.toString() + (instance.eContents()->size()).toString()"/>
+                                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Bool" referenceName="output" variableName="instanceOut">
+                                          <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                            <subModelOperations xsi:type="tool_1:SetValue" featureName="sort" valueExpression="aql:instanceOp.output"/>
+                                          </subModelOperations>
+                                          <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().id.toString() + self.eContainer().eContents()->size()"/>
+                                        </subModelOperations>
+                                      </subModelOperations>
+                                    </subModelOperations>
+                                  </firstModelOperations>
+                                </initialOperation>
+                              </buttons>
+                              <buttons labelExpression="OR" default="true" closeDialogOnClick="true">
+                                <initialOperation>
+                                  <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Or" referenceName="term" variableName="instanceOp">
+                                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                        <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: instance.id.toString() + (instance.eContents()->size()).toString()"/>
+                                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Bool" referenceName="output" variableName="instanceOut">
+                                          <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                            <subModelOperations xsi:type="tool_1:SetValue" featureName="sort" valueExpression="aql:instanceOp.output"/>
+                                          </subModelOperations>
+                                          <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().id.toString() + self.eContainer().eContents()->size()"/>
+                                        </subModelOperations>
+                                      </subModelOperations>
+                                    </subModelOperations>
+                                  </firstModelOperations>
+                                </initialOperation>
+                              </buttons>
+                              <buttons labelExpression="NOT" default="true" closeDialogOnClick="true">
+                                <initialOperation>
+                                  <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Not" referenceName="term" variableName="instanceOp">
+                                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                        <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: instance.id.toString() + (instance.eContents()->size()).toString()"/>
+                                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Bool" referenceName="output" variableName="instanceOut">
+                                          <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                            <subModelOperations xsi:type="tool_1:SetValue" featureName="sort" valueExpression="aql:instanceOp.output"/>
+                                          </subModelOperations>
+                                          <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().id.toString() + self.eContainer().eContents()->size()"/>
+                                        </subModelOperations>
+                                      </subModelOperations>
+                                    </subModelOperations>
+                                  </firstModelOperations>
+                                </initialOperation>
+                              </buttons>
+                              <buttons labelExpression="=" default="true" closeDialogOnClick="true">
+                                <initialOperation>
+                                  <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Equality" referenceName="term" variableName="instanceOp">
+                                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                        <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: instance.id.toString() + (instance.eContents()->size()).toString()"/>
+                                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Bool" referenceName="output" variableName="instanceOut">
+                                          <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                            <subModelOperations xsi:type="tool_1:SetValue" featureName="sort" valueExpression="aql:instanceOp.output"/>
+                                          </subModelOperations>
+                                          <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().id.toString() + self.eContainer().eContents()->size()"/>
+                                        </subModelOperations>
+                                      </subModelOperations>
+                                    </subModelOperations>
+                                  </firstModelOperations>
+                                </initialOperation>
+                              </buttons>
+                              <buttons labelExpression="&lt;" default="true" closeDialogOnClick="true">
+                                <initialOperation>
+                                  <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::LessThan" referenceName="term" variableName="instanceOp">
+                                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                        <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: instance.id.toString() + (instance.eContents()->size()).toString()"/>
+                                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Bool" referenceName="output" variableName="instanceOut">
+                                          <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                            <subModelOperations xsi:type="tool_1:SetValue" featureName="sort" valueExpression="aql:instanceOp.output"/>
+                                          </subModelOperations>
+                                          <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().id.toString() + self.eContainer().eContents()->size()"/>
+                                        </subModelOperations>
+                                      </subModelOperations>
+                                    </subModelOperations>
+                                  </firstModelOperations>
+                                </initialOperation>
+                              </buttons>
+                              <buttons labelExpression=">" default="true" closeDialogOnClick="true">
+                                <initialOperation>
+                                  <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::GreaterThan" referenceName="term" variableName="instanceOp">
+                                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                        <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: instance.id.toString() + (instance.eContents()->size()).toString()"/>
+                                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Bool" referenceName="output" variableName="instanceOut">
+                                          <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                            <subModelOperations xsi:type="tool_1:SetValue" featureName="sort" valueExpression="aql:instanceOp.output"/>
+                                          </subModelOperations>
+                                          <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().id.toString() + self.eContainer().eContents()->size()"/>
+                                        </subModelOperations>
+                                      </subModelOperations>
+                                    </subModelOperations>
+                                  </firstModelOperations>
+                                </initialOperation>
+                              </buttons>
+                              <buttons labelExpression="Boolean Constant" default="true" closeDialogOnClick="true">
+                                <initialOperation>
+                                  <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::BooleanConstant" referenceName="term" variableName="instanceOp">
+                                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                        <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: instance.id.toString() + (instance.eContents()->size()).toString()"/>
+                                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Bool" referenceName="output" variableName="instanceOut">
+                                          <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                            <subModelOperations xsi:type="tool_1:SetValue" featureName="sort" valueExpression="aql:instanceOp.output"/>
+                                          </subModelOperations>
+                                          <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().id.toString() + self.eContainer().eContents()->size()"/>
+                                        </subModelOperations>
+                                      </subModelOperations>
+                                    </subModelOperations>
+                                  </firstModelOperations>
+                                </initialOperation>
+                              </buttons>
+                              <buttons labelExpression="Variable DEV" default="true" closeDialogOnClick="true">
+                                <initialOperation>
+                                  <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Variable" referenceName="term" variableName="instanceOp">
+                                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                        <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: instance.id.toString() + (instance.eContents()->size()).toString()"/>
+                                      </subModelOperations>
+                                    </subModelOperations>
+                                  </firstModelOperations>
+                                </initialOperation>
+                              </buttons>
+                              <page name="Default Page" labelExpression="Set term of Continuous Action condition" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='createContinuousAction']/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.1/@buttons.1/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.0/@groups.0"/>
+                              <groups name="Default Group" labelExpression="Group" domainClass="terms::VariableDeclaration" semanticCandidateExpression="var:self"/>
+                            </subModelOperations>
+                          </subModelOperations>
+                        </firstModelOperations>
+                      </initialOperation>
+                    </buttons>
+                    <page name="Default Page" labelExpression="Set type of Stored Action" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='createContinuousAction']/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.1/@groups.0"/>
+                    <groups name="Default Group" labelExpression="Group" semanticCandidateExpression="var:self">
+                      <controls xsi:type="properties:RadioDescription" name="caTypeRadio" labelExpression="Continuous Action type" valueExpression="aql:grafcet::ContinuousActionType.getEEnumLiteral(self.continuousActionType.toString())" candidatesExpression="aql:grafcet::ContinuousActionType.eLiterals" candidateDisplayExpression="aql:candidate.name" numberOfColumns="3">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="continuousActionType" valueExpression="aql:newValue.instance"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                    </groups>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="createStoredAction" label="Stored Action" containerMappings="//@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@containerMappings[name='StoredActionContainer']" iconPath="/org.eclipse.sirius.agrafe.grafcet.design/icons_png/StoredAction.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="grafcet::StoredAction" referenceName="actionTypes">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().actionTypes->size()"/>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Variable" referenceName="variable" variableName="instanceVar">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceVar">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: instance.id.toString() + (instance.eContents()->size()).toString()"/>
+                      </subModelOperations>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Stored Action">
+                    <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true">
+                      <initialOperation/>
+                    </buttons>
+                    <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                      <initialOperation>
+                        <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:instance">
+                          <subModelOperations xsi:type="tool_1:If" conditionExpression="aql:self.storedActionType = grafcet::StoredActionType::event">
+                            <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Stored Action">
+                              <buttons labelExpression="AND" default="true" closeDialogOnClick="true">
+                                <initialOperation>
+                                  <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::And" referenceName="term" variableName="instanceOp">
+                                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                        <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: instance.id.toString() + (instance.eContents()->size()).toString()"/>
+                                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Bool" referenceName="output" variableName="instanceOut">
+                                          <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                            <subModelOperations xsi:type="tool_1:SetValue" featureName="sort" valueExpression="aql:instanceOp.output"/>
+                                          </subModelOperations>
+                                          <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().id.toString() + self.eContainer().eContents()->size()"/>
+                                        </subModelOperations>
+                                      </subModelOperations>
+                                    </subModelOperations>
+                                  </firstModelOperations>
+                                </initialOperation>
+                              </buttons>
+                              <buttons labelExpression="OR" default="true" closeDialogOnClick="true">
+                                <initialOperation>
+                                  <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Or" referenceName="term" variableName="instanceOp">
+                                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                        <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: instance.id.toString() + (instance.eContents()->size()).toString()"/>
+                                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Bool" referenceName="output" variableName="instanceOut">
+                                          <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                            <subModelOperations xsi:type="tool_1:SetValue" featureName="sort" valueExpression="aql:instanceOp.output"/>
+                                          </subModelOperations>
+                                          <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().id.toString() + self.eContainer().eContents()->size()"/>
+                                        </subModelOperations>
+                                      </subModelOperations>
+                                    </subModelOperations>
+                                  </firstModelOperations>
+                                </initialOperation>
+                              </buttons>
+                              <buttons labelExpression="NOT" default="true" closeDialogOnClick="true">
+                                <initialOperation>
+                                  <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Not" referenceName="term" variableName="instanceOp">
+                                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                        <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: instance.id.toString() + (instance.eContents()->size()).toString()"/>
+                                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Bool" referenceName="output" variableName="instanceOut">
+                                          <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                            <subModelOperations xsi:type="tool_1:SetValue" featureName="sort" valueExpression="aql:instanceOp.output"/>
+                                          </subModelOperations>
+                                          <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().id.toString() + self.eContainer().eContents()->size()"/>
+                                        </subModelOperations>
+                                      </subModelOperations>
+                                    </subModelOperations>
+                                  </firstModelOperations>
+                                </initialOperation>
+                              </buttons>
+                              <buttons labelExpression="Rising Edge" default="true" closeDialogOnClick="true">
+                                <initialOperation>
+                                  <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::RisingEdge" referenceName="term" variableName="instanceOp">
+                                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                        <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: instance.id.toString() + (instance.eContents()->size()).toString()"/>
+                                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Bool" referenceName="output" variableName="instanceOut">
+                                          <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                            <subModelOperations xsi:type="tool_1:SetValue" featureName="sort" valueExpression="aql:instanceOp.output"/>
+                                          </subModelOperations>
+                                          <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().id.toString() + self.eContainer().eContents()->size()"/>
+                                        </subModelOperations>
+                                      </subModelOperations>
+                                    </subModelOperations>
+                                  </firstModelOperations>
+                                </initialOperation>
+                              </buttons>
+                              <buttons labelExpression="Falling Edge" default="true" closeDialogOnClick="true">
+                                <initialOperation>
+                                  <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::FallingEdge" referenceName="term" variableName="instanceOp">
+                                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                        <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: instance.id.toString() + (instance.eContents()->size()).toString()"/>
+                                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Bool" referenceName="output" variableName="instanceOut">
+                                          <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                            <subModelOperations xsi:type="tool_1:SetValue" featureName="sort" valueExpression="aql:instanceOp.output"/>
+                                          </subModelOperations>
+                                          <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().id.toString() + self.eContainer().eContents()->size()"/>
+                                        </subModelOperations>
+                                      </subModelOperations>
+                                    </subModelOperations>
+                                  </firstModelOperations>
+                                </initialOperation>
+                              </buttons>
+                              <buttons labelExpression="=" default="true" closeDialogOnClick="true">
+                                <initialOperation>
+                                  <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Equality" referenceName="term" variableName="instanceOp">
+                                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                        <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: instance.id.toString() + (instance.eContents()->size()).toString()"/>
+                                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Bool" referenceName="output" variableName="instanceOut">
+                                          <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                            <subModelOperations xsi:type="tool_1:SetValue" featureName="sort" valueExpression="aql:instanceOp.output"/>
+                                          </subModelOperations>
+                                          <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().id.toString() + self.eContainer().eContents()->size()"/>
+                                        </subModelOperations>
+                                      </subModelOperations>
+                                    </subModelOperations>
+                                  </firstModelOperations>
+                                </initialOperation>
+                              </buttons>
+                              <buttons labelExpression="&lt;" default="true" closeDialogOnClick="true">
+                                <initialOperation>
+                                  <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::LessThan" referenceName="term" variableName="instanceOp">
+                                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                        <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: instance.id.toString() + (instance.eContents()->size()).toString()"/>
+                                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Bool" referenceName="output" variableName="instanceOut">
+                                          <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                            <subModelOperations xsi:type="tool_1:SetValue" featureName="sort" valueExpression="aql:instanceOp.output"/>
+                                          </subModelOperations>
+                                          <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().id.toString() + self.eContainer().eContents()->size()"/>
+                                        </subModelOperations>
+                                      </subModelOperations>
+                                    </subModelOperations>
+                                  </firstModelOperations>
+                                </initialOperation>
+                              </buttons>
+                              <buttons labelExpression=">" default="true" closeDialogOnClick="true">
+                                <initialOperation>
+                                  <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::GreaterThan" referenceName="term" variableName="instanceOp">
+                                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                        <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: instance.id.toString() + (instance.eContents()->size()).toString()"/>
+                                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Bool" referenceName="output" variableName="instanceOut">
+                                          <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                            <subModelOperations xsi:type="tool_1:SetValue" featureName="sort" valueExpression="aql:instanceOp.output"/>
+                                          </subModelOperations>
+                                          <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().id.toString() + self.eContainer().eContents()->size()"/>
+                                        </subModelOperations>
+                                      </subModelOperations>
+                                    </subModelOperations>
+                                  </firstModelOperations>
+                                </initialOperation>
+                              </buttons>
+                              <buttons labelExpression="Boolean Constant" default="true" closeDialogOnClick="true">
+                                <initialOperation>
+                                  <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::BooleanConstant" referenceName="term" variableName="instanceOp">
+                                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                        <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: instance.id.toString() + (instance.eContents()->size()).toString()"/>
+                                        <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Bool" referenceName="output" variableName="instanceOut">
+                                          <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                            <subModelOperations xsi:type="tool_1:SetValue" featureName="sort" valueExpression="aql:instanceOp.output"/>
+                                          </subModelOperations>
+                                          <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().id.toString() + self.eContainer().eContents()->size()"/>
+                                        </subModelOperations>
+                                      </subModelOperations>
+                                    </subModelOperations>
+                                  </firstModelOperations>
+                                </initialOperation>
+                              </buttons>
+                              <buttons labelExpression="Variable" default="true" closeDialogOnClick="true">
+                                <initialOperation>
+                                  <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Variable" referenceName="term" variableName="instanceOp">
+                                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                        <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: instance.id.toString() + (instance.eContents()->size()).toString()"/>
+                                      </subModelOperations>
+                                    </subModelOperations>
+                                  </firstModelOperations>
+                                </initialOperation>
+                              </buttons>
+                              <page name="Default Page" labelExpression="Set condition of Stored Action" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='createStoredAction']/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.1/@buttons.1/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.0/@groups.0"/>
+                              <groups name="Default Group" labelExpression="Group" domainClass="terms::VariableDeclaration" semanticCandidateExpression="var:self"/>
+                            </subModelOperations>
+                          </subModelOperations>
+                          <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Stored Action">
+                            <buttons labelExpression="AND" default="true" closeDialogOnClick="true">
+                              <initialOperation>
+                                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::And" referenceName="value" variableName="instanceOp">
+                                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                      <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: instance.id.toString() + (instance.eContents()->size()).toString()"/>
+                                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Bool" referenceName="output" variableName="instanceOut">
+                                        <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                          <subModelOperations xsi:type="tool_1:SetValue" featureName="sort" valueExpression="aql:instanceOp.output"/>
+                                        </subModelOperations>
+                                        <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().id.toString() + self.eContainer().eContents()->size()"/>
+                                      </subModelOperations>
+                                    </subModelOperations>
+                                  </subModelOperations>
+                                </firstModelOperations>
+                              </initialOperation>
+                            </buttons>
+                            <buttons labelExpression="OR" default="true" closeDialogOnClick="true">
+                              <initialOperation>
+                                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Or" referenceName="value" variableName="instanceOp">
+                                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                      <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: instance.id.toString() + (instance.eContents()->size()).toString()"/>
+                                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Bool" referenceName="output" variableName="instanceOut">
+                                        <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                          <subModelOperations xsi:type="tool_1:SetValue" featureName="sort" valueExpression="aql:instanceOp.output"/>
+                                        </subModelOperations>
+                                        <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().id.toString() + self.eContainer().eContents()->size()"/>
+                                      </subModelOperations>
+                                    </subModelOperations>
+                                  </subModelOperations>
+                                </firstModelOperations>
+                              </initialOperation>
+                            </buttons>
+                            <buttons labelExpression="NOT" default="true" closeDialogOnClick="true">
+                              <initialOperation>
+                                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Not" referenceName="value" variableName="instanceOp">
+                                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                      <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: instance.id.toString() + (instance.eContents()->size()).toString()"/>
+                                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Bool" referenceName="output" variableName="instanceOut">
+                                        <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                          <subModelOperations xsi:type="tool_1:SetValue" featureName="sort" valueExpression="aql:instanceOp.output"/>
+                                        </subModelOperations>
+                                        <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().id.toString() + self.eContainer().eContents()->size()"/>
+                                      </subModelOperations>
+                                    </subModelOperations>
+                                  </subModelOperations>
+                                </firstModelOperations>
+                              </initialOperation>
+                            </buttons>
+                            <buttons labelExpression="=" default="true" closeDialogOnClick="true">
+                              <initialOperation>
+                                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Equality" referenceName="value" variableName="instanceOp">
+                                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                      <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: instance.id.toString() + (instance.eContents()->size()).toString()"/>
+                                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Bool" referenceName="output" variableName="instanceOut">
+                                        <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                          <subModelOperations xsi:type="tool_1:SetValue" featureName="sort" valueExpression="aql:instanceOp.output"/>
+                                        </subModelOperations>
+                                        <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().id.toString() + self.eContainer().eContents()->size()"/>
+                                      </subModelOperations>
+                                    </subModelOperations>
+                                  </subModelOperations>
+                                </firstModelOperations>
+                              </initialOperation>
+                            </buttons>
+                            <buttons labelExpression="+" default="true" closeDialogOnClick="true">
+                              <initialOperation>
+                                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Addition" referenceName="value" variableName="instanceOp">
+                                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                      <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: instance.id.toString() + (instance.eContents()->size()).toString()"/>
+                                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Integer" referenceName="output" variableName="instanceOut">
+                                        <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                          <subModelOperations xsi:type="tool_1:SetValue" featureName="sort" valueExpression="aql:instanceOp.output"/>
+                                        </subModelOperations>
+                                        <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().id.toString() + self.eContainer().eContents()->size()"/>
+                                      </subModelOperations>
+                                    </subModelOperations>
+                                  </subModelOperations>
+                                </firstModelOperations>
+                              </initialOperation>
+                            </buttons>
+                            <buttons labelExpression="-" default="true" closeDialogOnClick="true">
+                              <initialOperation>
+                                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Substraction" referenceName="value" variableName="instanceOp">
+                                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                      <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: instance.id.toString() + (instance.eContents()->size()).toString()"/>
+                                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Integer" referenceName="output" variableName="instanceOut">
+                                        <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                          <subModelOperations xsi:type="tool_1:SetValue" featureName="sort" valueExpression="aql:instanceOp.output"/>
+                                        </subModelOperations>
+                                        <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().id.toString() + self.eContainer().eContents()->size()"/>
+                                      </subModelOperations>
+                                    </subModelOperations>
+                                  </subModelOperations>
+                                </firstModelOperations>
+                              </initialOperation>
+                            </buttons>
+                            <buttons labelExpression="&lt;" default="true" closeDialogOnClick="true">
+                              <initialOperation>
+                                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::LessThan" referenceName="value" variableName="instanceOp">
+                                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                      <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: instance.id.toString() + (instance.eContents()->size()).toString()"/>
+                                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Bool" referenceName="output" variableName="instanceOut">
+                                        <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                          <subModelOperations xsi:type="tool_1:SetValue" featureName="sort" valueExpression="aql:instanceOp.output"/>
+                                        </subModelOperations>
+                                        <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().id.toString() + self.eContainer().eContents()->size()"/>
+                                      </subModelOperations>
+                                    </subModelOperations>
+                                  </subModelOperations>
+                                </firstModelOperations>
+                              </initialOperation>
+                            </buttons>
+                            <buttons labelExpression=">" default="true" closeDialogOnClick="true">
+                              <initialOperation>
+                                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::GreaterThan" referenceName="value" variableName="instanceOp">
+                                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                      <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: instance.id.toString() + (instance.eContents()->size()).toString()"/>
+                                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Bool" referenceName="output" variableName="instanceOut">
+                                        <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                          <subModelOperations xsi:type="tool_1:SetValue" featureName="sort" valueExpression="aql:instanceOp.output"/>
+                                        </subModelOperations>
+                                        <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().id.toString() + self.eContainer().eContents()->size()"/>
+                                      </subModelOperations>
+                                    </subModelOperations>
+                                  </subModelOperations>
+                                </firstModelOperations>
+                              </initialOperation>
+                            </buttons>
+                            <buttons labelExpression="Boolean Constant" default="true" closeDialogOnClick="true">
+                              <initialOperation>
+                                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::BooleanConstant" referenceName="value" variableName="instanceOp">
+                                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                      <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: instance.id.toString() + (instance.eContents()->size()).toString()"/>
+                                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Bool" referenceName="output" variableName="instanceOut">
+                                        <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                          <subModelOperations xsi:type="tool_1:SetValue" featureName="sort" valueExpression="aql:instanceOp.output"/>
+                                        </subModelOperations>
+                                        <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().id.toString() + self.eContainer().eContents()->size()"/>
+                                      </subModelOperations>
+                                    </subModelOperations>
+                                  </subModelOperations>
+                                </firstModelOperations>
+                              </initialOperation>
+                            </buttons>
+                            <buttons labelExpression="Integer Constant" default="true" closeDialogOnClick="true">
+                              <initialOperation>
+                                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::IntegerConstant" referenceName="value" variableName="instanceOp">
+                                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                      <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: instance.id.toString() + (instance.eContents()->size()).toString()"/>
+                                      <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Integer" referenceName="output" variableName="instanceOut">
+                                        <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                          <subModelOperations xsi:type="tool_1:SetValue" featureName="sort" valueExpression="aql:instanceOp.output"/>
+                                        </subModelOperations>
+                                        <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().id.toString() + self.eContainer().eContents()->size()"/>
+                                      </subModelOperations>
+                                    </subModelOperations>
+                                  </subModelOperations>
+                                </firstModelOperations>
+                              </initialOperation>
+                            </buttons>
+                            <buttons labelExpression="Variable DEV" default="true" closeDialogOnClick="true">
+                              <initialOperation>
+                                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Variable" referenceName="value" variableName="instanceOp">
+                                    <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                                      <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: instance.id.toString() + (instance.eContents()->size()).toString()"/>
+                                    </subModelOperations>
+                                  </subModelOperations>
+                                </firstModelOperations>
+                              </initialOperation>
+                            </buttons>
+                            <page name="Default Page" labelExpression="Set value of Output Variable of Stored Action " semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='createStoredAction']/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.1/@buttons.1/@initialOperation/@firstModelOperations/@subModelOperations.1/@groups.0"/>
+                            <groups name="Default Group" labelExpression="Group" domainClass="terms::VariableDeclaration" semanticCandidateExpression="var:self"/>
+                          </subModelOperations>
+                        </firstModelOperations>
+                      </initialOperation>
+                    </buttons>
+                    <page name="Default Page" labelExpression="Set type of Stored Action" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='createStoredAction']/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.1/@groups.0"/>
+                    <groups name="Default Group" labelExpression="Group" semanticCandidateExpression="var:self">
+                      <controls xsi:type="properties:RadioDescription" name="saTypeRadio" labelExpression="Stored Action type" valueExpression="aql:grafcet::StoredActionType.getEEnumLiteral(self.storedActionType.toString())" candidatesExpression="aql:grafcet::StoredActionType.eLiterals" candidateDisplayExpression="aql:candidate.name" numberOfColumns="3">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="storedActionType" valueExpression="aql:newValue.instance"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                    </groups>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="createActionLink" edgeMappings="//@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@edgeMappings[name='ActionLinkElementEdge']" iconPath="/org.eclipse.sirius.agrafe.grafcet.design/icons_png/ActionLink.png">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:source.eContainer()">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="grafcet::ActionLink" referenceName="actionLinks">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="step" valueExpression="var:source"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="actionType" valueExpression="var:target"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="createEnclosingStepExpansion" label="Partial GRAFCET" containerMappings="//@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@containerMappings[name='EnclosingStepContainer']" iconPath="/org.eclipse.sirius.agrafe.grafcet.design/icons_png/EnclosingStepExpansion.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="grafcet::PartialGrafcet" referenceName="partialGrafcets"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="createEnclosingStep" label="Enclosing Step" nodeMappings="//@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@nodeMappings[name='EnclosingStepNode']" iconPath="/org.eclipse.sirius.agrafe.grafcet.design/icons_png/EnclosingStep.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="grafcet::EnclosingStep" referenceName="steps">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:container.steps->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="createForcingOrder" label="Forcing Order" nodeMappings="//@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@nodeMappings[name='ForcingOrderNode']" iconPath="/org.eclipse.sirius.agrafe.grafcet.design/icons_png/ForcingOrder.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="grafcet::ForcingOrder" referenceName="actionTypes">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:container.actionTypes->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="createMacroStepExpansion" label="Macro Step Expansion" containerMappings="//@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@containerMappings[name='MacroStepContainer']" iconPath="/org.eclipse.sirius.agrafe.grafcet.design/icons_png/MacroStepExpansion.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="grafcet::MacrostepExpansion" referenceName="partialGrafcets"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="createMacroStep" label="Macro Step" nodeMappings="//@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@nodeMappings[name='MacroStepNode']" iconPath="/org.eclipse.sirius.agrafe.grafcet.design/icons_png/Macrostep.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="grafcet::Macrostep" referenceName="macrosteps">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:container.steps->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="createEntryStep" label="Entry Step" nodeMappings="//@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@containerMappings[name='MacroStepContainer']/@subNodeMappings[name='EntryStepNode']" iconPath="/org.eclipse.sirius.agrafe.grafcet.design/icons_png/EntryStep.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="grafcet::EntryStep" referenceName="entryStep">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:container.steps->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="createExitStep" label="Exit Step" nodeMappings="//@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@containerMappings[name='MacroStepContainer']/@subNodeMappings[name='ExitStepNode']" iconPath="/org.eclipse.sirius.agrafe.grafcet.design/icons_png/ExitStep.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="grafcet::ExitStep" referenceName="exitStep">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:container.steps->size()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Terms">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="And" label="AND" containerMappings="//@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@containerMappings[name='TermContainer']/@subContainerMappings[name='SubTermContainer'] //@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@containerMappings[name='StoredActionContainer']/@subContainerMappings[name='ValueContainer']/@subContainerMappings[name='SubTermContainer']" extraMappings="//@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@containerMappings[name='StoredActionContainer']/@subContainerMappings[name='ValueContainer'] //@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@containerMappings[name='StoredActionContainer']/@subContainerMappings[name='ValueContainer']/@subContainerMappings[name='SubTermContainer'] //@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@containerMappings[name='TermContainer'] //@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@containerMappings[name='TermContainer']/@subContainerMappings[name='SubTermContainer']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::And" referenceName="subterm" variableName="instanceOp">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: self.eContainer().id.toString() + (self.eContainer().eContents()->size()).toString()"/>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Bool" referenceName="output" variableName="instanceOut">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="sort" valueExpression="aql:instanceOp.output"/>
+                      </subModelOperations>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().id.toString() + self.eContainer().eContents()->size()"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="input" valueExpression="aql:instanceOp.sort"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="RisingEdge" label="Rising Edge" containerMappings="//@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@containerMappings[name='TermContainer']/@subContainerMappings[name='SubTermContainer'] //@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@containerMappings[name='StoredActionContainer']/@subContainerMappings[name='ValueContainer']/@subContainerMappings[name='SubTermContainer']" extraMappings="//@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@containerMappings[name='StoredActionContainer']/@subContainerMappings[name='ValueContainer'] //@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@containerMappings[name='StoredActionContainer']/@subContainerMappings[name='ValueContainer']/@subContainerMappings[name='SubTermContainer'] //@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@containerMappings[name='TermContainer'] //@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@containerMappings[name='TermContainer']/@subContainerMappings[name='SubTermContainer']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::RisingEdge" referenceName="subterm" variableName="instanceOp">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: self.eContainer().id.toString() + (self.eContainer().eContents()->size()).toString()"/>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Bool" referenceName="output" variableName="instanceOut">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="sort" valueExpression="aql:instanceOp.output"/>
+                      </subModelOperations>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().id.toString() + self.eContainer().eContents()->size()"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="input" valueExpression="aql:instanceOp.sort"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="FallingEdge" label="Falling Edge" containerMappings="//@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@containerMappings[name='TermContainer']/@subContainerMappings[name='SubTermContainer'] //@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@containerMappings[name='StoredActionContainer']/@subContainerMappings[name='ValueContainer']/@subContainerMappings[name='SubTermContainer']" extraMappings="//@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@containerMappings[name='StoredActionContainer']/@subContainerMappings[name='ValueContainer'] //@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@containerMappings[name='StoredActionContainer']/@subContainerMappings[name='ValueContainer']/@subContainerMappings[name='SubTermContainer'] //@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@containerMappings[name='TermContainer'] //@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@containerMappings[name='TermContainer']/@subContainerMappings[name='SubTermContainer']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::FallingEdge" referenceName="subterm" variableName="instanceOp">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: self.eContainer().id.toString() + (self.eContainer().eContents()->size()).toString()"/>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Bool" referenceName="output" variableName="instanceOut">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="sort" valueExpression="aql:instanceOp.output"/>
+                      </subModelOperations>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().id.toString() + self.eContainer().eContents()->size()"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="input" valueExpression="aql:instanceOp.sort"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="createOrCondition" label="OR" candidatesExpression="var:self">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Or" referenceName="subterm" variableName="instanceOp">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: self.eContainer().id.toString() + (self.eContainer().eContents()->size()).toString()"/>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Bool" referenceName="output" variableName="instanceOut">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="sort" valueExpression="aql:instanceOp.output"/>
+                      </subModelOperations>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().id.toString() + self.eContainer().eContents()->size()"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="input" valueExpression="aql:instanceOp.sort"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="createNotCondition" label="NOT" candidatesExpression="var:self">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Not" referenceName="subterm" variableName="instanceOp">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: self.eContainer().id.toString() + (self.eContainer().eContents()->size()).toString()"/>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Bool" referenceName="output" variableName="instanceOut">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="sort" valueExpression="aql:instanceOp.output"/>
+                      </subModelOperations>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().id.toString() + self.eContainer().eContents()->size()"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="input" valueExpression="aql:instanceOp.sort"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="createEqualityCondition" label="Equality" candidatesExpression="var:self">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Equality" referenceName="subterm" variableName="instanceOp">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: self.eContainer().id.toString() + (self.eContainer().eContents()->size()).toString()"/>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Bool" referenceName="output" variableName="instanceOut">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="sort" valueExpression="aql:instanceOp.output"/>
+                      </subModelOperations>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().id.toString() + self.eContainer().eContents()->size()"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="input" valueExpression="aql:instanceOp.sort"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="createAddCondition" label="Addition" candidatesExpression="var:self">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Addition" referenceName="subterm" variableName="instanceOp">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: self.eContainer().id.toString() + (self.eContainer().eContents()->size()).toString()"/>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Integer" referenceName="output" variableName="instanceOut">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="sort" valueExpression="aql:instanceOp.output"/>
+                      </subModelOperations>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().id.toString() + self.eContainer().eContents()->size()"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="input" valueExpression="aql:instanceOp.sort"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="createSubCondition" label="Substraction" candidatesExpression="var:self">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Substraction" referenceName="subterm" variableName="instanceOp">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: self.eContainer().id.toString() + (self.eContainer().eContents()->size()).toString()"/>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Integer" referenceName="output" variableName="instanceOut">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="sort" valueExpression="aql:instanceOp.output"/>
+                      </subModelOperations>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().id.toString() + self.eContainer().eContents()->size()"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="input" valueExpression="aql:instanceOp.sort"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="createLessThanCondition" label="Less Than" candidatesExpression="var:self">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::LessThan" referenceName="subterm" variableName="instanceOp">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: self.eContainer().id.toString() + (self.eContainer().eContents()->size()).toString()"/>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Bool" referenceName="output" variableName="instanceOut">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="sort" valueExpression="aql:instanceOp.output"/>
+                      </subModelOperations>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().id.toString() + self.eContainer().eContents()->size()"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="input" valueExpression="aql:instanceOp.sort"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="createGreaterThanCondition" label="Greater Than" candidatesExpression="var:self">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::GreaterThan" referenceName="subterm" variableName="instanceOp">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: self.eContainer().id.toString() + (self.eContainer().eContents()->size()).toString()"/>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Bool" referenceName="output" variableName="instanceOut">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="sort" valueExpression="aql:instanceOp.output"/>
+                      </subModelOperations>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().id.toString() + self.eContainer().eContents()->size()"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="input" valueExpression="aql:instanceOp.sort"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="createBooleanConstCondition" label="Boolean Constant" candidatesExpression="var:self">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::BooleanConstant" referenceName="subterm" variableName="instanceOp">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: self.eContainer().id.toString() + (self.eContainer().eContents()->size()).toString()"/>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Bool" referenceName="output" variableName="instanceOut">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="sort" valueExpression="aql:instanceOp.output"/>
+                      </subModelOperations>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().id.toString() + self.eContainer().eContents()->size()"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="input" valueExpression="aql:instanceOp.sort"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="createIntegerConstCondition" label="Integer Constant" candidatesExpression="var:self">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::IntegerConstant" referenceName="subterm" variableName="instanceOp">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: self.eContainer().id.toString() + (self.eContainer().eContents()->size()).toString()"/>
+                    <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Integer" referenceName="output" variableName="instanceOut">
+                      <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                        <subModelOperations xsi:type="tool_1:SetValue" featureName="sort" valueExpression="aql:instanceOp.output"/>
+                      </subModelOperations>
+                      <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:self.eContainer().id.toString() + self.eContainer().eContents()->size()"/>
+                    </subModelOperations>
+                  </subModelOperations>
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="input" valueExpression="aql:instanceOp.sort"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="createVariableCondition" label="Variable" candidatesExpression="var:self">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Variable" referenceName="subterm" variableName="instanceOp">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instanceOp">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql: self.eContainer().id.toString() + (self.eContainer().eContents()->size()).toString()"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Variable Declarations">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="createVariableDeclaration" label="Variable Declaration" nodeMappings="//@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@containerMappings[name='DeclarationsContainer']/@subNodeMappings[name='VariableDeclarationNode']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::VariableDeclaration" referenceName="variableDeclarations">
+                  <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Set name">
+                    <buttons labelExpression="Cancel" closeDialogOnClick="true" rollbackChangesOnClose="true"/>
+                    <buttons labelExpression="OK" default="true" closeDialogOnClick="true">
+                      <initialOperation>
+                        <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
+                          <subModelOperations xsi:type="properties:DialogModelOperation" titleExpression="Set Sort">
+                            <buttons labelExpression="Bool" default="true" closeDialogOnClick="true">
+                              <initialOperation>
+                                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Bool" referenceName="sort">
+                                    <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:'900' + container.eContents()->size()"/>
+                                  </subModelOperations>
+                                </firstModelOperations>
+                              </initialOperation>
+                            </buttons>
+                            <buttons labelExpression="Integer" closeDialogOnClick="true">
+                              <initialOperation>
+                                <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:self">
+                                  <subModelOperations xsi:type="tool_1:CreateInstance" typeName="terms::Integer" referenceName="sort">
+                                    <subModelOperations xsi:type="tool_1:SetValue" featureName="id" valueExpression="aql:'900' + container.eContents()->size()"/>
+                                  </subModelOperations>
+                                </firstModelOperations>
+                              </initialOperation>
+                            </buttons>
+                            <page name="Default Page" labelExpression="Set Sort of Variable Declaration" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@toolSections.2/@ownedTools[name='createVariableDeclaration']/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.0/@buttons.1/@initialOperation/@firstModelOperations/@subModelOperations.0/@groups.0"/>
+                            <groups name="Default Group" labelExpression="Group" domainClass="terms::VariableDeclaration" semanticCandidateExpression="var:self"/>
+                          </subModelOperations>
+                        </firstModelOperations>
+                      </initialOperation>
+                    </buttons>
+                    <page name="Default Page" labelExpression="Set Name of Variable Declaration" semanticCandidateExpression="var:self" groups="//@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@toolSections.2/@ownedTools[name='createVariableDeclaration']/@initialOperation/@firstModelOperations/@subModelOperations.0/@subModelOperations.0/@groups.0"/>
+                    <groups name="Default Group" labelExpression="Group" semanticCandidateExpression="var:self">
+                      <controls xsi:type="properties:TextDescription" name="nameVarDecl" labelExpression="Name of Variable:" valueExpression="aql:instance.name" filterConditionalStylesFromExtendedTextExpression="test">
+                        <initialOperation>
+                          <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:instance">
+                            <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:newValue"/>
+                          </firstModelOperations>
+                        </initialOperation>
+                      </controls>
+                    </groups>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="createVariableDeclarations" label="Variable Declaration Container" containerMappings="//@ownedViewpoints[name='grafcet_chart']/@ownedRepresentations[name='Grafcet_diagram']/@defaultLayer/@containerMappings[name='DeclarationsContainer']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="grafcet::VariableDeclarationContainer" referenceName="variableDeclarationContainer"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="org.eclipse.sirius.agrafe.grafcet.design.Services"/>
+  </ownedViewpoints>
+</description:Group>
