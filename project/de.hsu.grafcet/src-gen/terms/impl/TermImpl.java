@@ -212,18 +212,11 @@ public abstract class TermImpl extends MinimalEObjectImpl.Container implements T
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
-			return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (id: ");
-		result.append(id);
-		result.append(')');
-		return result.toString();
+		return this.getClass().getName();
 	}
 
 } //TermImpl

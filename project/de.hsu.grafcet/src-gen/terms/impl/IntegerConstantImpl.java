@@ -259,18 +259,11 @@ public class IntegerConstantImpl extends ConstantImpl implements IntegerConstant
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
-			return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (value: ");
-		result.append(value);
-		result.append(')');
-		return result.toString();
+		return this.getClass().getSimpleName();
 	}
 
 } //IntegerConstantImpl

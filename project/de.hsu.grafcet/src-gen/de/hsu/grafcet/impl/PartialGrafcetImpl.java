@@ -156,4 +156,14 @@ public class PartialGrafcetImpl extends GrafcetImpl implements PartialGrafcet {
 		return super.eIsSet(featureID);
 	}
 
+	/**
+	 * @generated NOT
+	 */
+	@Override
+	public String toString() {
+		return this.name;
+	}
+	
+	
+
 } //PartialGrafcetImpl

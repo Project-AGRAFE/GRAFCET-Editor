@@ -240,4 +240,16 @@ public class VariableImpl extends TermImpl implements Variable {
 		return super.eInvoke(operationID, arguments);
 	}
 
+	
+	/**
+	 * 
+	 * @generated NOT
+	 */
+
+	@Override
+	public String toString() {
+		return variableDeclaration.getName();
+	}
+	
+
 } //VariableImpl

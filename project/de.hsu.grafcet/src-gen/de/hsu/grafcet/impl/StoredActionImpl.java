@@ -981,21 +981,29 @@ public class StoredActionImpl extends ActionImpl implements StoredAction {
 		return super.eInvoke(operationID, arguments);
 	}
 
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
-			return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (storedActionType: ");
-		result.append(storedActionType);
-		result.append(')');
-		return result.toString();
+		return "StAction [" + storedActionType + ", val=" + value + ", var=" + variable
+				+ ", in=" + eContainer + "]";
 	}
+	
+//	public String toString() {
+//		return this.term + this.value
+//		
+//		if (eIsProxy())
+//			return super.toString();
+//
+//		StringBuilder result = new StringBuilder(super.toString());
+//		result.append(" (storedActionType: ");
+//		result.append(storedActionType);
+//		result.append(')');
+//		return result.toString();
+//	}
 
 } //StoredActionImpl
