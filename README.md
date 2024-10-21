@@ -5,7 +5,7 @@ Graphical editor for IEC 60848 GRAFCET based on a [meta-model](https://github.co
 * Install [EMF](https://www.eclipse.org/modeling/emf) and [Sirius](https://www.eclipse.org/sirius) in Eclipse.
 * Import the Eclipse projects from the [project](https://github.com/Project-AGRAFE/GRAFCET-editor/tree/main/project) folder into an Eclipse workspace.
 * Create a new runtime using _Run Configurations --> Eclipse Application_.
-* Import the [Sirius configuration file](https://github.com/Project-AGRAFE/GRAFCET-editor/tree/main/runtime/org.eclipse.sirius.agrafe.grafcet.design) of the editor into the Eclipse runtime.
+* Import the [Sirius configuration file](https://github.com/Project-AGRAFE/GRAFCET-editor/tree/main/runtime/de.hsu.grafcet.design) of the editor into the Eclipse runtime.
 
 # Create a GRAFCET instance
 * Create a Sirius _Modeling Project_.
